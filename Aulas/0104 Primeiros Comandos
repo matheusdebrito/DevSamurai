@@ -1,0 +1,41 @@
+
+Primeiros comandos do JavaScript
+Função console.log
+Esta função basicamente exibe um valor de entrada no console do Google Chrome (ou no console onde está
+em execução, caso esteja no Node.js ou no Mobile). 
+Muito útil quando se deseja entender, por exemplo, os valores de uma variável:
+var x = 1; 
+console.log(x); 
+OBS: Eu sei que parece ridículo o uso disso, mas quero ver você achar o mesmo em um programa de 1000
+linhas onde você não tem ideia onde a variável está sendo declarada 
+Função alert
+Esta função basicamente exibe na tela do usuário uma mensagem (aquela janela chata que fica "pulando na
+tela" com textos em sites "educativos"). 
+Muito útil quando se deseja que o usuário do outro lado quebre o teclado ou então para exibir valores de
+variáveis e mensagens. 
+Vejamos o modo de uso:
+var x = 1; 
+alert(x); 
+A diferença entre o console.log e o alert é que a primeira exibe a mensagem apenas no console do
+desenvolvedor e a outra interrompe o fluxo do programa e visual saltando na tela.
+Função prompt e confirm
+Em determinados casos, um programa precisa saber o que passa na cabeça do usuário, qual seu nome,
+idade, etc. Armazenar os valores e utilizar a posteriormente para tomar decisões ou realizar operações. 
+Para isso podemos contar com as funções prompt e confirm. Vejamos os exemplos de uso:
+var x = prompt("Digite seu número da sorte"); 
+alert(x); 
+var x = confirm("O seu número da sorte é 13?"); 
+alert(x); 
+Desafio
+Incremente a nossa calculara para receber os valores a partir dos dados digitados pelo usuário e mostrar
+como um alerta.
+Resposta
+var x = prompt("Digite o primeiro número"); 
+var y = prompt("Digite o segundo número"); 
+var resultado = Number(x) + Number(y); 
+alert("O resultado da soma é: " + resultado); 
+Explicação
+Como precisamos receber os valores do teclado do usuário, utilizamos a função prompt. Contudo, como
+venho dizendo, ela retorna os valores na forma de texto que precisam ser convertidos para números. 
+Também para deixar o alert menos irritante, utilizei a soma (concatenação) de uma mensagem amigável +
+o resultado.

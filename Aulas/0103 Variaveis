@@ -1,0 +1,32 @@
+
+Declarando variáveis
+As variáveis fazem com que o programa mantenha conhecimento do seu estado. Ou melhor, que lembre-se
+das coisas. 
+Sendo assim, as variáveis permitem armazenar valores para que um programa em execução possa realizar
+operações e outras coisas que programas fazem. 
+No JavaScript para declarar uma variável utilizamos o comando var (de variável):
+var x = 2; 
+var y = 1; 
+x + y; 
+// 3 
+Ou então, sobrescrevendo valores:
+var x = 2; 
+var y = 1; 
+var x = 1; 
+x + y; 
+// 2 
+Uso com outros tipos:
+var nome = "Felipe"; 
+var idade = 22; 
+var endereco = "Rua dos Bobos, número 0."; 
+var aposentado = false; 
+Desafio
+Continuar o desafio da calculadora, agora armazenando os valores em variáveis (chamadas de X e Y),
+somando-as e o resultado também sendo armazenado em uma variável.
+Resposta
+var x = Number("1"); 
+var y = Number("2"); 
+var resultado = x + y; 
+Explicação
+Armazenando os valores em variáveis tornamos mais flexível um programa, já que esses valores virão de
+uma função de entrada de dados do teclado.
