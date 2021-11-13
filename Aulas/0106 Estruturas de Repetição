@@ -1,0 +1,66 @@
+
+Tornando o seu programa um robô incansável
+
+Até agora nós vimos as estruturas básicas de um programa que são: variáveis, fluxo de execução, estrutura
+de decisão (IF) e também os operadores.
+E chegou a hora de tornar o nosso programa mais avançado dando a ele mais poderes e conhecendo o que
+chamamos de estrutura de repetição.
+Para que a gente possa entender direito, imagine que você aprontou todas na escola e ficou de castigo,
+então a professora nervosa decide a punição: "escrever 150 vezes na lousa".
+Se você for "preguiçoso" como eu, logo pensaria em uma forma de automatizar isso, deixar um robô fazer o
+serviço as 150 vezes.
+A estrutura de repetição (no contexto da programação) é necessário pelo mesmo motivo: executar comandos
+repetitivos sob uma determinada condição imposta pelo programador.
+Esta condição (de parada) junto com seus operadores funciona idêntico ao IF.
+A grosso modo seria algo dessa forma:
+ENQUANTO x < 150 FAÇA 
+  ESCREVER("Nunca mais irei morder o cachorro da diretora!"); 
+  x + 1; 
+FIM ENQUANTO 
+O pseudocódigo acima funciona assim: enquanto a estrutura não atingir a condição de parada ela fica
+executando (no caso escrevendo na tela).
+A estrutura de repetição mais básica (WHILE)
+Dentro da especificação do JavaScript podemos utilizar diversos tipos de estrutura de repetição. Como
+veremos o que varia é a finalidade de cada uma.
+E das três mais básicas começaremos com o while. Que na prática é o "enquanto" do pseudocódigo acima.
+Sua sintaxe básica é da seguinte forma:
+while (x < 150) { 
+    console.log("Nunca mais irei morder o cachorro da diretora!"); 
+    x = x + 1; // X assume o valore dele mesmo + 1. 
+} 
+Como você já percebeu, caso a condição de parada não seja atingida o looping ficará infinito. Ou seja, o
+robô executará isso até ocorrer algum evento externo (acabar a energia, ser desligado ou cair um meteoro
+em cima).
+Essas condições infinitas ocorrem por 3 motivos principais:
+1. O programador não adicionou um contador para cada passo do looping.
+2. A condição de parada está malfeita ou é complexa demais (foi adicionado condição em cima de
+condição tornando-a impossível de ser atingida).
+3. É intencional.
+Na prática ficaria assim...
+Erro 1: esquecer do contador de parada.
+while (x < 150) { 
+    console.log("Nunca mais irei morder o cachorro da diretora!"); 
+    // aqui iria o contador para o valor ser incrementado cada vez que for 
+executado, por isso o valor de X nunca sairá de zero e a condição de parada 
+nunca será satisfeita. 
+} 
+Ou até:
+while (y < 150) { 
+    console.log("Nunca mais irei morder o cachorro da diretora!"); 
+    x = x + 1; // o critério de avaliação está diferente do meu contador 
+(variável trocada) 
+} 
+Erro 2: condições confusas e complexas
+// veja a condição de parada alienígena, isso nunca será atingido... 
+while ((x < 150) && (y > 10) || (z == true)) { 
+    console.log("Nunca mais irei morder o cachorro da diretora!"); 
+    x = x + 1; 
+} 
+Operadores do WHILE
+Como você percebeu as condições de paradas obedecem exatamente a mesma estrutura e "jeitão" do IF. Ou
+seja, utilizam variáveis, valores, operadores de comparação e se você quiser até os operadores lógicos.
+Por isso o while é uma das estruturas de repetição mais básicas e importantes da programação.
+while ("<sua condição de parada aqui>") { 
+    // comando 
+    // contador 
+} 
