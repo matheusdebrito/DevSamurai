@@ -251,3 +251,4 @@ var indice = -1;
 for(i = 0;i < nomes.length;i++) { 
     if (nomes[i] == busca) { 
         indice = i; 
+                    

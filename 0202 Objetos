@@ -1,0 +1,66 @@
+
+Estrutura de Dados: Objetos
+
+Até agora os arrays comportaram muito bem o nosso problema de lista de convidados. Contudo o seu cliente
+pediu algumas alterações no "sisteminha".
+De acordo com ele: "as vezes as pessoas colocam seus nomes na lista mas não podem entrar no evento,
+alguns convidados tem menos de 18 anos...".
+No sistema temos isso:
+var nomes = ["Felipe", "Zezinho", "Fulano"]; 
+// como recuperar mais informações se nosso array guarda apenas nomes!? 
+Como você pode ver temos somente as informações de nome, nada mais. E isso está demandando muito
+trabalho no momento em que é feita a verificação da entrada.
+O cliente ainda continua: "*[...] precisamos ter a possibilidade de cadastrar o CPF, data de nascimento e a
+idade para adiantar o meu processo [...]".
+Claramente o nosso sistema não dá conta desse recado, armazenamos apenas a informação de nome em
+nossos cadastros.
+Por isso se faz necessário uma forma melhor de cadastrar a informação de cada convidado, permitindo
+cadastrar não apenas o nome, mas outros dados para o controle.
+Objetos e outros bichos
+Os objetos são estruturas de dados que podem ser composta por propriedades e ações (técnicamente
+métodos). Esse comportamento é inspirado por objetos do mundo real, veja alguns exemplos:
+Cachorros:
+Raça
+Gênero
+Cor do pelo
+Computadores:
+Processador
+Memória
+Sistema Operacional
+E mais algumas ações, um exemplo:
+Humanos:
+Propriedades
+Altura
+Peso
+Idade
+Gênero
+Cor do cabelo
+Praticamente qualquer coisa no planeta Terra pode ser representado por objetos (com suas propriedades).
+E não é diferente aqui, sendo assim seria muito interessante representar nosso convidado com a seguinte
+estrutura de propriedades:
+Propriedades
+Nome
+Idade
+Gênero
+Data de Nascimento
+CPF
+Isso cobre 101% o que o cliente necessita, mas como fazer isso em JavaScript?
+Criando objetos
+Um objeto no JavaScript pode ser declarado da seguinte forma:
+var convidado = {nome: "Felipe", idade: "37", genero: "Masculino", 
+dataNascimento: "18/02/1982", cpf: "037.727.730-44"} 
+console.log(convidado); 
+// → {nome: "Felipe", idade: "37", genero: "Masculino", dataNascimento: 
+"18/02/1982", cpf: "037.727.730-44"} 
+A beleza da coisa é que você pode acrescentar qualquer propriedade, inclusive a propriedade da
+propriedade (que seria objeto de objeto):
+var convidado = {nome: "Felipe", idade: "37", genero: "Masculino", 
+dataNascimento: {ano: 1982, mes: 2, dia: 18}, cpf: "037.727.730-44"} 
+console.log(convidado); 
+// → {nome: "Felipe", idade: "37", genero: "Masculino", dataNascimento: 
+{ano: 1982, mes: 2, dia:18}, cpf: "037.727.730-44"} 
+E depois de criado é fácil acessar uma ou mais propriedade:
+var convidado = {nome: "Felipe", idade: "37", genero: "Masculino", 
+dataNascimento: {ano: 1982, mes: 2, dia: 18}, cpf: "037.727.730-44"} 
+console.log(convidado.nome); 
+// → Felipe 
