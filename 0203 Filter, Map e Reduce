@@ -1,0 +1,74 @@
+
+Filter, Map e Reduce
+Nós já entendemos que um array serve para armazenar uma sequência de dados e que podemos manipular
+esta sequência.
+Entendemos também que podemos manipular isso, adicionando, removendo e realizando alterações com os
+métodos próprios do array.
+E agora chegou a hora de entrar mais a fundo na nossa etapa de manipulação de dados utilizando funções
+mais avançadas que são o filter, map e reduce.
+Em resumo os métodos:
+filter: Retorna um array com os valores filtrados.
+map: Retorna um array com os valores modificados.
+reduce: Retorna um array, número ou texto a partir do array.
+filter
+A primeira função do nosso canivete suíço de funções utilitárias de array é o filter.
+Pelo o nome você já consegue desconfiar o que ele faz... Ele filtra 
+Basicamente o filter permite executar uma função de callback para cada elemento do array.
+Ou seja, ele vai executar um for que a cada passada o vai executar a sua função. Bem útil quando
+queremos analisar cada elemento e tomar uma ação de decisão se fica ou sai.
+A sua função de callback deve retornar apenas true ou false. Assim quando for retornado verdadeiro a
+função filter saberá que este elemento pode entrar, senão deixa ele de fora.
+O resultado da função filter sempre será um outro array.
+Parece complicado!? Sim! Mas vem comigo...
+var numeros = [10, 18, 1, 15]; 
+ 
+var maiorQue10 = function(item) { 
+    return item > 10; 
+} 
+ 
+var novosNumeros = numeros.filter(maiorQue10); 
+ 
+console.log(novosNumeros); 
+// → [18, 15] 
+A função callback chamada maiorQue10 recebe como parâmetro o elemento corrente desse array.
+O filter pode calcular o que você bem entender, já que a função de callback é que determina as regras do
+jogo.
+Vamos ver o exemplo da lista de nomes e deixar entrar apenas quem tem o nome iniciado com a letra Z.
+var nomes = ["Bruno", "Zezinho", "Fulano", "Douglas"]; 
+ 
+var convidados = nomes.filter(function(item){ 
+    return item.charAt(0) == "Z"; 
+}); 
+ 
+console.log(convidados); 
+// → ["Zezinho"] 
+No exemplo acima a função callback compara a primeira letra, se for igual a "Z" está dentro.
+Agora outro exemplo, filtro de pares e ímpares:
+var numeros = [10, 18, 1, 15, 2, 12, 21, 33, 100]; 
+ 
+var pares = function(item) { 
+    return !(item % 2); 
+} 
+ 
+var impares = function(item) { 
+    return item % 2; 
+} 
+ 
+var numerosPar = numeros.filter(pares); 
+var numerosImpar = numeros.filter(impares); 
+ 
+console.log(numerosPar); 
+// → [10, 18, 2, 12, 100] 
+ 
+console.log(numerosImpar); 
+// → [1, 15, 21, 33] 
+E este outro exemplo de locadora de vídeos, um filtro de filmes bons e ruins:
+var filmes = [ 
+    {titulo: 'Titanic', duracao: 195, nota: 7.5}, 
+    {titulo: 'The Avengers', duracao: 203, nota: 9.5}, 
+    {titulo: 'Bean', duracao: 90, nota: 6.5} 
+] 
+ 
+var notaCorte = 8; 
+ 
+var bons = function(item) { 
