@@ -1,0 +1,46 @@
+
+Objetos
+O que são?
+Estruturas de dados
+var obj = { 
+    nome: 'Felipe', 
+    idade: 37, 
+    dataNascimento: { 
+        dia: 18, 
+        mes: 2, 
+        ano: 1982 
+    } 
+} 
+Paradigma de programação
+Concentra funções de uma entidade
+Propriedades e métodos
+Funcionário:
+Nome
+Idade
+Num. Registro
+Registra entrada/saída
+Contas a pagar:
+Data venc.
+Data pagam.
+Número do boleto
+CalcularJuros
+Desafio
+Criar um tipo de objeto chamado convidados que possa conter as propriedades e métodos inerentes a um
+convidado.
+Resposta
+var convidado = { 
+    nome: "Felipe", 
+    idade: 37, 
+    vip: false, 
+    checkIn: function(data) { 
+        console.log("Registro de dada de entrada: " + data); 
+    }, 
+    checkOut: function(data) { 
+        console.log("Registro de dada de saída: " + data); 
+    }, 
+    pagarEvento: function(valor) { 
+        console.log("Pagando evento: " + valor); 
+    }, 
+} 
+ 
+funcionario.registrarEntrada("06/09/2027"); 

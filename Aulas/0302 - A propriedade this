@@ -1,0 +1,55 @@
+
+A propriedade this
+Como acessar as propriedades do próprio objeto?
+var funcionario = { 
+    nome: "Felipe", 
+    idade: 37, 
+    numRegistro: "12345B", 
+    departamento: "TI", 
+    eventos: [ 
+        {evento: 'faltou', data: '18/05/2009'}, 
+        {evento: 'falou bravo com o chefe', data: '18/06/2009'}, 
+    ], 
+    detalhes: { 
+        hobies: ['fotografia', 'jiu-jitsu'], 
+    }, 
+    horarios: [], 
+    registrarEntrada: function(data) { 
+        // horarios.push({data: data, evento: 'entrada'}) 
+        console.log("Entrada às" + data + " - " + numRegistro); 
+    }, 
+    registrarSaida: function(data) { 
+        // horarios.push({data: data, evento: 'saida'}) 
+        console.log("Saída às" + data + " - " + numRegistro); 
+    } 
+} 
+Variáveis externas?
+A propriedade this.
+Desafio
+No objeto convidado (criado na aula anterior) crie 2 métodos:
+1. registroEntrada (data e hora do computador)
+2. registroSaida (data e hora do computador)
+Com os 2 métodos criados, crie uma propriedade chamada tempoPermanencia que será calculada
+automaticamente ao executar o método registroSaida.
+O tempoPermanencia deve estar em minutos.
+Dica: utilize a biblioteca nativa Date do JavaScript para isso.
+Resposta
+var convidado = { 
+    nome: "Felipe", 
+    idade: 37, 
+    vip: false, 
+    entrada: false, 
+    saida: false, 
+    tempoPermanencia: false, 
+    registrarEntrada: function() { 
+        this.entrada = new Date(); 
+    }, 
+    registrarSaida: function() { 
+        this.saida = new Date(); 
+        this.tempoPermanencia = (this.saida - this.entrada) / (1000 * 60); 
+    } 
+} 
+ 
+convidado.registrarEntrada(); 
+convidado.registrarSaida(); 
+convidado.tempoPermanencia; 

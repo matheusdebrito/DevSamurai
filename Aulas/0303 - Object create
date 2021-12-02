@@ -1,0 +1,38 @@
+
+Object.create()
+2 formas principais de criar objetos
+var pessoa1 = { 
+    nome: 'Felipe', 
+    idade: 37 
+} 
+Ou:
+var pessoa3 = Object.create(pessoa2); 
+Objetos são referências
+pessoa2.idade = 21; 
+ 
+var pessoa3 = pessoa2; 
+pessoa3.idade = 34; 
+pessoa2.idade 
+// 34 (referência) 
+Uso do Object.create()
+Função de criação de objetos vazios:
+var pessoa3 = Object.create(null); 
+// {} 
+ 
+pessoa3.idade = 87; 
+// {idade: 87} 
+Função de clone de objetos:
+pessoa2.idade = 21; 
+ 
+var pessoa3 = Object.create(pessoa2); 
+pessoa3.idade = 34; 
+pessoa2.idade 
+// 21 (clone) 
+Desafio
+Criar um método dentro do sistema de controle de convidados para que possa clonar objetos aproveitando
+os dados de outro convidado.
+Resposta
+var convidado = {id: 123, nome: "Felipe Fontoura"}; 
+var convidados = [convidado]; 
+novoConvidado = Object.create(convidado); 
+convidados.push(novoConvidado); 
