@@ -6,22 +6,39 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var teste = /*#__PURE__*/function () {
-  function teste() {
-    _classCallCheck(this, teste);
+var ListaConvidados = /*#__PURE__*/function () {
+  function ListaConvidados() {
+    _classCallCheck(this, ListaConvidados);
+
+    this.convidados = [];
   }
 
-  _createClass(teste, [{
-    key: "digaOla",
-    value: function digaOla() {
-      alert("Ola Tudo Bem ?");
+  _createClass(ListaConvidados, [{
+    key: "adicionar",
+    value: function adicionar(nome, idade, cpf) {
+      this.convidados.push({
+        nome: nome,
+        idade: idade,
+        cpf: cpf
+      });
     }
   }, {
-    key: "digaOi",
-    value: function digaOi() {
-      alert("Oi");
+    key: "listarConvidados",
+    value: function listarConvidados() {
+      console.log(this.convidados);
     }
   }]);
 
-  return teste;
+  return ListaConvidados;
 }();
+
+var listaConv = new ListaConvidados();
+
+document.getElementById("adicionar").onclick = function () {
+  var nome = document.getElementById("nome").value;
+  listaConv.adicionar(nome, 22, "13898916740");
+};
+
+document.getElementById("listar").onclick = function () {
+  listaConv.listarConvidados();
+};
