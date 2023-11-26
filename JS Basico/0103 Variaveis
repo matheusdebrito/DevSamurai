@@ -30,3 +30,5 @@ var resultado = x + y;
 Explicação
 Armazenando os valores em variáveis tornamos mais flexível um programa, já que esses valores virão de
 uma função de entrada de dados do teclado.
+
+#
