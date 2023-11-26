@@ -69,3 +69,10 @@ var f1 = function() {
     var x = "variável da função 1"; 
 } 
 f1(); 
+
+
+let f2 = () => {
+    // código
+}
+
+f2()

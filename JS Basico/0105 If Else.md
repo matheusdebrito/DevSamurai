@@ -62,4 +62,7 @@ if (idade > 18) {
     console.log("Poxa parabéns atrasado."); // executa a mensagem apenas quando a 
 idade for maior que 18 anos e 1 segundo. 
 } 
+
+If ternário Exemplo : let idade = 18
+                      idade >= 18 ? console.log("maior") : console.log("menor")
     
